@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BlogPost App</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>BlogPost App</h1>
+            <div class="author-select">
+                <label for="authorSelect">Select Author:</label>
+                <select id="authorSelect">
+                    <option value="">Choose an author...</option>
+                </select>
+            </div>
+        </header>
+
+        <main>
+            <section id="blogSection">
+                <div class="section-header">
+                    <h2>Blogs</h2>
+                    <button id="newBlogBtn" class="btn primary">New Blog</button>
+                </div>
+                <div id="blogList" class="blog-list"></div>
+            </section>
+
+            <!-- Blog Form Modal -->
+            <div id="blogModal" class="modal">
+                <div class="modal-content">
+                    <h3 id="blogModalTitle">New Blog</h3>
+                    <form id="blogForm">
+                        <div class="form-group">
+                            <label for="blogName">Blog Name:</label>
+                            <input type="text" id="blogName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="blogUrl">URL:</label>
+                            <input type="url" id="blogUrl" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="blogTags">Tags (comma-separated):</label>
+                            <input type="text" id="blogTags">
+                        </div>
+                        <div class="form-group">
+                            <label for="blogContent">Content:</label>
+                            <textarea id="blogContent" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn secondary" onclick="closeModal('blogModal')">Cancel</button>
+                            <button type="submit" class="btn primary">Save</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Comment Form Modal -->
+            <div id="commentModal" class="modal">
+                <div class="modal-content">
+                    <h3>Add Comment</h3>
+                    <form id="commentForm">
+                        <div class="form-group">
+                            <label for="commentText">Comment:</label>
+                            <textarea id="commentText" required></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="btn secondary" onclick="closeModal('commentModal')">Cancel</button>
+                            <button type="submit" class="btn primary">Post</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+
+        <!-- Tag Search Section -->
+        <aside class="tag-search">
+            <h3>Search by Tag</h3>
+            <div class="search-box">
+                <input type="text" id="tagSearch" placeholder="Enter tag...">
+                <button id="searchBtn" class="btn primary">Search</button>
+            </div>
+        </aside>
+
+        <!-- Notifications -->
+        <div id="notification" class="notification"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
