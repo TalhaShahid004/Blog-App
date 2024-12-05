@@ -47,7 +47,7 @@ Follow these steps to set up the application:
 
 1. Clone the repository:
    ```bash
-   git clone [your-repository-url]
+   git clone https://github.com/TalhaShahid004/Blog-App
    cd Blog-App
    ```
 
